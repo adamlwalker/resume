@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employer: MyString
+  startend: MyString
+  jobtitle: MyString
+  jobdescription: MyText
+  order: 1
+  resume_id: 
+
+two:
+  employer: MyString
+  startend: MyString
+  jobtitle: MyString
+  jobdescription: MyText
+  order: 1
+  resume_id: 

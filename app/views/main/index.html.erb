@@ -1,0 +1,175 @@
+
+<div class="container">
+      <div class="row">
+	 <div class="col-xs-12">	      
+          <div id="photo-header" class="text-center">
+            <!-- PHOTO (AVATAR) -->
+            <div id="photo" class="hidden-print" >
+              <img src="images/avatar.jpg" alt="avatar">
+            </div>
+            <div id="text-header">
+	   <h1><%= @resume.company %>,
+	 <br> my name is <span>Adam</span> and this is my resume for the <%= @resume.position %>  position</h1>
+         </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-7">
+           <!-- summary -->
+          <div class="box">
+            <h2>Summary</h2>
+	    <% det = getlist(Detail).first %><p> <%= det.summary %> </p>
+         </div>
+          <!-- ABOUT ME -->
+          <div class="box">
+		  <h2>About Me</h2>
+		  <p><%= det.about %> </p>
+          </div>
+         
+                   <!-- EXPERIENCES -->
+          <div class="box">
+            <h2>Experience</h2>
+            <div class="job clearfix">
+              <div class="col-xs-3">
+		      <% getlist(Experience).each{|job| %> 
+			      <div class="where"><%= job.employer %></div>
+			      <div class="year"><%= job.startend %></div>
+              </div>
+              <div class="col-xs-9">
+		      <div class="profession"><%= job.jobtitle %></div>
+		      <div class="description"><%=raw job.jobdescription %></div>
+              </div>
+      </div>
+      <% } %>   
+      
+          <!-- Personal Milestones -->
+          <div class="box hidden-print">
+            <h2>Personal Milestones</h2>
+            <div class="alert alert-success">
+            <p> The Milestones below are provided to give you an idea of who I am and my interests. </p>
+            </div>
+	    <ul id="education" class="clearfix">
+       <% getlist(Milestone).each{|ms| %>
+              <li>
+	      <div class="year pull-left"><%= ms.year %></div>
+                <div class="description pull-right">
+			<h3><%= ms.name %></h3>                
+			<p><%= ms.description %> </p>
+                </div>
+		</li>
+	<% } %>
+              <li>
+              <li>
+            </ul>
+          </div>
+              </div>
+        </div>
+        <div class="col-xs-12 col-sm-5">
+          <!-- CONTACT -->
+          <div class="box clearfix hidden-print">
+            <h2>Contact</h2>
+            <div class="contact-item">
+              <div class="icon pull-left text-center"><span class="fa fa-phone fa-fw"></span></div>
+              <div class="title only pull-right">301 693 5451</div>
+            </div>
+            <div class="contact-item">
+		    <div class="icon pull-left text-center"><a href="mailto:adam@adamlwalker.com"><span class="fa fa-envelope fa-fw"></span></a></div>
+              <div class="title only pull-right">adam@adamlwalker.com</div>
+            </div>
+            <div class="contact-item">
+              <div class="icon pull-left text-center"><a href="https://twitter.com/acontius" target="_blank"><span class="fa fa-twitter fa-fw"></span></a></div>
+              <div class="title pull-right">Twitter</div>
+              <div class="description pull-right">https://twitter.com/acontius</div>
+            </div>
+            <div class="contact-item">
+              <div class="icon pull-left text-center"><a href="https://www.facebook.com/acontius" target="_blank"><span class="fa fa-facebook fa-fw"></span></a></div>
+              <div class="title pull-right">Facebook</div>
+              <div class="description pull-right">https://www.facebook.com/acontius</div>
+            </div>
+            <div class="contact-item">
+              <div class="icon pull-left text-center"><a href="skype:adamlwalker77?add"><span class="fa fa-skype fa-fw"></span></a></div>
+              <div class="title pull-right">Skype</div>
+              <div class="description pull-right">adamlwalker77</div>
+            </div>
+          </div>
+    
+          <!-- SKILLS -->
+          <div class="box">
+            <h2>Skills</h2>
+	    <div class="skills">
+		    <% getlist(Skill).each {|sk| %>
+			    <div class="item-skills" data-percent="<%= sk.level %>"><%= sk.name %></div>
+		    <% } %>
+              <div class="skills-legend clearfix hidden-print">
+                <div class="legend-left legend">Beginner</div>
+                <div class="legend-left legend"><span>Proficient</span></div>
+                <div class="legend-right legend"><span>Expert</span></div>
+                <div class="legend-right legend">Master</div>
+              </div>
+            </div>
+          </div>
+          
+                 <!-- Software -->
+          <div class="box">
+            <h2>Software</h2>
+	    <div class="skills">
+		    <% getlist(Software).each{|sw| %>
+			    <div class="item-skills" data-percent="<%= sw.level %>"><%= sw.name %></div>
+		    <% } %>
+              <div class="skills-legend clearfix hidden-print">
+                <div class="legend-left legend">Beginner</div>
+                <div class="legend-left legend"><span>Proficient</span></div>
+                <div class="legend-right legend"><span>Expert</span></div>
+                <div class="legend-right legend">Master</div>
+              </div>
+            </div>
+          </div>
+          
+                 <!-- 3rd party services -->
+          <div class="box">
+            <h2>3rd Party Services</h2>
+	    <div class="skills">
+		    <% getlist(Service).each{|srv| %>
+			    <div class="item-skills" data-percent="<%= srv.level %>"><%= srv.name %></div>
+		    <% } %>
+              <div class="skills-legend clearfix hidden-print">
+                <div class="legend-left legend">Beginner</div>
+                <div class="legend-left legend"><span>Proficient</span></div>
+                <div class="legend-right legend"><span>Expert</span></div>
+                <div class="legend-right legend">Master</div>
+              </div>
+            </div>
+          </div>
+          
+
+          <!-- HOBBIES -->
+          <div class="box hidden-print">
+		  <h2>Hobbies</h2>
+		  <% getlist(Hobby).each {|hob| %> 
+			  <div class="hobby"><%= hob.name %></div>
+		  <% } %>
+          </div>
+        </div>
+      </div>
+     <div class="alert alert-danger hidden-print">
+      <p>This site is built using Bootstrap, jQuery and Ruby on Rails by Adam Walker. Deployed via Docker.</p>
+      </div>
+     <div class="alert alert-info visible-print">
+	     <p>To see additional information please visit <%= request.original_url %> </p>
+     </div>
+
+    </div>
+           <!-- JQUERY -->
+    <script src="javascripts/jquery.min.js"></script>
+    <!-- BOOTSTRAP -->
+    <script src="javascripts/bootstrap.min.js"></script>
+    <!-- SCRIPTS -->
+    <script src="javascripts/scripts.js"></script>
+    
+      <!-- Popover on Hover -->
+  <script type="text/javascript">
+    jQuery(document).ready(function() {
+        jQuery('[id=popover]').popover();
+    });
+</script>
