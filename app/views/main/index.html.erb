@@ -8,8 +8,7 @@
               <img src="images/avatar.jpg" alt="avatar">
             </div>
             <div id="text-header">
-	   <h1><%= @resume.company %>,
-	 <br> my name is <span>Adam</span> and this is my resume for the <%= @resume.position %>  position</h1>
+	   <h1><%= @resume.company %>,<br /> my name is <span>Adam</span> and this is my resume for the <%= @resume.position %>  position</h1>
          </div>
           </div>
         </div>
@@ -19,12 +18,12 @@
            <!-- summary -->
           <div class="box">
             <h2>Summary</h2>
-	    <% det = getlist(Detail).first %><p> <%= det.summary %> </p>
+	    <% det = getlist(Detail).first %><p> <%=raw det.summary %> </p>
          </div>
           <!-- ABOUT ME -->
           <div class="box">
 		  <h2>About Me</h2>
-		  <p><%= det.about %> </p>
+		  <p><%=raw det.about %> </p>
           </div>
          
                    <!-- EXPERIENCES -->
@@ -47,7 +46,7 @@
           <div class="box hidden-print">
             <h2>Personal Milestones</h2>
             <div class="alert alert-success">
-            <p> The Milestones below are provided to give you an idea of who I am and my interests. </p>
+            <p> The Milestones below are provided to give you an idea of who I am and my interests. These will not print. </p>
             </div>
 	    <ul id="education" class="clearfix">
        <% getlist(Milestone).each{|ms| %>
@@ -55,7 +54,7 @@
 	      <div class="year pull-left"><%= ms.year %></div>
                 <div class="description pull-right">
 			<h3><%= ms.name %></h3>                
-			<p><%= ms.description %> </p>
+			<p><%=raw ms.description %> </p>
                 </div>
 		</li>
 	<% } %>
@@ -83,9 +82,9 @@
               <div class="description pull-right">https://twitter.com/acontius</div>
             </div>
             <div class="contact-item">
-              <div class="icon pull-left text-center"><a href="https://www.facebook.com/acontius" target="_blank"><span class="fa fa-facebook fa-fw"></span></a></div>
-              <div class="title pull-right">Facebook</div>
-              <div class="description pull-right">https://www.facebook.com/acontius</div>
+              <div class="icon pull-left text-center"><a href="https://www.linkedin.com/in/adamlwalker77" target="_blank"><span class="fa fa-linkedin fa-fw"></span></a></div>
+              <div class="title pull-right">LinkedIn</div>
+              <div class="description pull-right">https://www.linkedin.com/in/adamlwalker77</div>
             </div>
             <div class="contact-item">
               <div class="icon pull-left text-center"><a href="skype:adamlwalker77?add"><span class="fa fa-skype fa-fw"></span></a></div>
