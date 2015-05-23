@@ -9,7 +9,8 @@
             </div>
             <div id="text-header">
 	   <h1><%= @resume.company %>,<br /> my name is <span>Adam</span> and this is my resume for the <%= @resume.position %>  position</h1>
-         </div>
+<div class="row visible-print"><p>Adam Walker |  adam@adamlwalker.com  | 301-693-5451</p> </div>
+</div>
           </div>
         </div>
       </div>
@@ -30,8 +31,8 @@
           <div class="box">
             <h2>Experience</h2>
             <div class="job clearfix">
+<% getlist(Experience).each{|job| %>
               <div class="col-xs-3">
-		      <% getlist(Experience).each{|job| %> 
 			      <div class="where"><%= job.employer %></div>
 			      <div class="year"><%= job.startend %></div>
               </div>
@@ -39,8 +40,8 @@
 		      <div class="profession"><%= job.jobtitle %></div>
 		      <div class="description"><%=raw job.jobdescription %></div>
               </div>
-      </div>
-      <% } %>   
+<% } %>     
+ </div>
       
           <!-- Personal Milestones -->
          <!--  <div class="box hidden-print">
@@ -84,9 +85,9 @@
               <div class="description pull-right">https://www.linkedin.com/in/adamlwalker77</div>
             </div>
             <div class="contact-item">
-              <div class="icon pull-left text-center"><a href="skype:adamlwalker77?add"><span class="fa fa-skype fa-fw"></span></a></div>
-              <div class="title pull-right">Skype</div>
-              <div class="description pull-right">adamlwalker77</div>
+              <div class="icon pull-left text-center"><a href="https://github.com/adamlwalker"><span class="fa fa-github fa-fw"></span></a></div>
+              <div class="title pull-right">Github</div>
+              <div class="description pull-right">https://github.com/adamlwalker</div>
             </div>
           </div>
     
@@ -95,8 +96,9 @@
             <h2>Skills</h2>
 	    <div class="skills">
 		    <% getlist(Skill).each {|sk| %>
-			    <div class="item-skills" data-percent="<%= sk.level %>"><%= sk.name %></div>
+			    <div class="item-skills hidden-print" data-percent="<%= sk.level %>"><%= sk.name %></div>
 		    <% } %>
+<div class="visible-print"><% getlist(Skill).each{|srv| %><%= srv.name %> | <% } %> </div>
               <div class="skills-legend clearfix hidden-print">
                 <div class="legend-left legend">Beginner</div>
                 <div class="legend-left legend"><span>Proficient</span></div>
@@ -111,8 +113,9 @@
             <h2>Software</h2>
 	    <div class="skills">
 		    <% getlist(Software).each{|sw| %>
-			    <div class="item-skills" data-percent="<%= sw.level %>"><%= sw.name %></div>
+			    <div class="item-skills hidden-print" data-percent="<%= sw.level %>"><%= sw.name %></div>
 		    <% } %>
+<div class="visible-print"><% getlist(Software).each{|srv| %><%= srv.name %> | <% } %> </div>
               <div class="skills-legend clearfix hidden-print">
                 <div class="legend-left legend">Beginner</div>
                 <div class="legend-left legend"><span>Proficient</span></div>
@@ -127,8 +130,9 @@
             <h2>3rd Party Services</h2>
 	    <div class="skills">
 		    <% getlist(Service).each{|srv| %>
-			    <div class="item-skills" data-percent="<%= srv.level %>"><%= srv.name %></div>
+	    <div class="item-skills hidden-print" data-percent="<%= srv.level %>"><%= srv.name %></div>
 		    <% } %>
+     <div class="visible-print"><% getlist(Service).each{|srv| %><%= srv.name %> | <% } %> </div>
               <div class="skills-legend clearfix hidden-print">
                 <div class="legend-left legend">Beginner</div>
                 <div class="legend-left legend"><span>Proficient</span></div>
@@ -149,7 +153,7 @@
         </div>
       </div>
      <div class="alert alert-danger hidden-print">
-      <p>This site is built using Bootstrap, jQuery and Ruby on Rails by Adam Walker. Deployed via Docker.</p>
+      <p>This site is built using Bootstrap, jQuery and Ruby on Rails by <a href="http://adamlwalker.com">Adam Walker</a>, 2015. </p>
       </div>
      <div class="alert alert-info visible-print">
 	     <p>To see additional information please visit <%= request.original_url %> </p>
