@@ -1,8 +1,9 @@
 ActiveAdmin.register Resume do
 
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
+permit_params :name, :company, :position, 
+detail_attributes:[:summary,:about,:extra,:_destroy,:resume_id],
+experiences_attributes:[:employer,:startend,:jobtitle,:jobdescription,:_destroy,:resume_id]
+
 form do |f|
 	f.inputs 'Resume' do
 	f.input :name
@@ -10,9 +11,9 @@ form do |f|
 	f.input :position
 	f.inputs 'Resume Details' do
 		f.has_many :detail, :allow_destroy => true, :new_record => true do |t|
-			t.input :summary
-			t.input :about
-			t.input :extra
+			t.input :summary, as: :wysihtml5
+			t.input :about, as: :wysihtml5
+			t.input :extra, as: :wysihtml5
 		end
 
 
@@ -20,7 +21,7 @@ form do |f|
 			t.input :employer
 			t.input :startend
 			t.input :jobtitle
-			t.input :jobdescription
+			t.input :jobdescription, as: :wysihtml5
 		end
 
 	columns do
@@ -39,7 +40,6 @@ form do |f|
 		end
 	end
 	column do
-	
 		f.has_many :softwares, :allow_destroy => true, :new_record => true do |t|
 			t.input :name
 			t.input :level
@@ -49,7 +49,9 @@ form do |f|
 			t.input :name
 		end
 	end
+
 end
+f.actions
 	end
 end	
 end
