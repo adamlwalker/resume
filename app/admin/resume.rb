@@ -23,6 +23,10 @@ form do |f|
 			t.input :jobdescription
 		end
 
+	columns do
+       column do
+
+
 		f.has_many :skills, :allow_destroy => true, :new_record => true do |t|
 			t.input :name
 			t.input :level
@@ -33,7 +37,8 @@ form do |f|
 			t.input :name
 			t.input :level
 		end
-	
+	end
+	column do
 	
 		f.has_many :softwares, :allow_destroy => true, :new_record => true do |t|
 			t.input :name
@@ -43,6 +48,8 @@ form do |f|
 		f.has_many :hobbies, :allow_destroy => true, :new_record => true do |t|
 			t.input :name
 		end
+	end
+end
 	end
 end	
 end
