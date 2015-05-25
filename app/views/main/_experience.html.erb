@@ -1,0 +1,14 @@
+          <div class="box">
+            <h2>Experience</h2>
+            <div class="job clearfix">
+<% getlist(Experience).each{|job| %>
+              <div class="col-xs-3">
+			      <div class="where"><%= job.employer %></div>
+			      <div class="year"><%= job.startend %></div>
+              </div>
+              <div class="col-xs-9">
+		      <div class="profession"><%= job.jobtitle %></div>
+		      <div class="description"><%=raw job.jobdescription %></div>
+              </div>
+<% } %>     
+ </div>

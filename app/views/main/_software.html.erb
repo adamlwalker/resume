@@ -1,0 +1,15 @@
+          <div class="box">
+            <h2>Software</h2>
+	    <div class="skills">
+		    <% getlist(Software).each{|sw| %>
+			    <div class="item-skills hidden-print" data-percent="<%= sw.level %>"><%= sw.name %></div>
+		    <% } %>
+<div class="visible-print"><% getlist(Software).each{|srv| %><%= srv.name %> | <% } %> </div>
+              <div class="skills-legend clearfix hidden-print">
+                <div class="legend-left legend">Beginner</div>
+                <div class="legend-left legend"><span>Proficient</span></div>
+                <div class="legend-right legend"><span>Expert</span></div>
+                <div class="legend-right legend">Master</div>
+              </div>
+            </div>
+          </div>

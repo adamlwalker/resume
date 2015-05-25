@@ -23,7 +23,7 @@
   ga('send', 'pageview');
 
 </script>
-  <title><%= @resume.company %></title>
+  <title><%= @resume.company if @resume.present? %></title>
   </head>
   <body>
 

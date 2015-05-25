@@ -1,0 +1,15 @@
+          <div class="box">
+            <h2>3rd Party Services</h2>
+	    <div class="skills">
+		    <% getlist(Service).each{|srv| %>
+	    <div class="item-skills hidden-print" data-percent="<%= srv.level %>"><%= srv.name %></div>
+		    <% } %>
+     <div class="visible-print"><% getlist(Service).each{|srv| %><%= srv.name %> | <% } %> </div>
+              <div class="skills-legend clearfix hidden-print">
+                <div class="legend-left legend">Beginner</div>
+                <div class="legend-left legend"><span>Proficient</span></div>
+                <div class="legend-right legend"><span>Expert</span></div>
+                <div class="legend-right legend">Master</div>
+              </div>
+            </div>
+          </div>

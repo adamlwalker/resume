@@ -28,130 +28,29 @@
           </div>
          
                    <!-- EXPERIENCES -->
-          <div class="box">
-            <h2>Experience</h2>
-            <div class="job clearfix">
-<% getlist(Experience).each{|job| %>
-              <div class="col-xs-3">
-			      <div class="where"><%= job.employer %></div>
-			      <div class="year"><%= job.startend %></div>
-              </div>
-              <div class="col-xs-9">
-		      <div class="profession"><%= job.jobtitle %></div>
-		      <div class="description"><%=raw job.jobdescription %></div>
-              </div>
-<% } %>     
- </div>
+<%= render 'experience' %>
       
           <!-- Personal Milestones -->
-         <!--  <div class="box hidden-print">
-            <h2>Personal Milestones</h2>
-	    <ul id="education" class="clearfix">
-       <% getlist(Milestone).each{|ms| %>
-              <li>
-	      <div class="year pull-left"><%= ms.year %></div>
-                <div class="description pull-right">
-			<h3><%= ms.name %></h3>                
-			<p><%=raw ms.description %> </p>
-                </div>
-		</li>
-	<% } %>
-              <li>
-              <li>
-            </ul>
-          </div> -->
+<%= render 'milestone' %>
               </div> 
         </div> 
         <div class="col-xs-12 col-sm-5">
           <!-- CONTACT -->
-          <div class="box clearfix hidden-print">
-            <h2>Contact</h2>
-            <div class="contact-item">
-              <div class="icon pull-left text-center"><span class="fa fa-phone fa-fw"></span></div>
-              <div class="title only pull-right">301 693 5451</div>
-            </div>
-            <div class="contact-item">
-		    <div class="icon pull-left text-center"><a href="mailto:adam@adamlwalker.com"><span class="fa fa-envelope fa-fw"></span></a></div>
-              <div class="title only pull-right">adam@adamlwalker.com</div>
-            </div>
-            <div class="contact-item">
-              <div class="icon pull-left text-center"><a href="https://twitter.com/acontius" target="_blank"><span class="fa fa-twitter fa-fw"></span></a></div>
-              <div class="title pull-right">Twitter</div>
-              <div class="description pull-right">https://twitter.com/acontius</div>
-            </div>
-            <div class="contact-item">
-              <div class="icon pull-left text-center"><a href="https://www.linkedin.com/in/adamlwalker77" target="_blank"><span class="fa fa-linkedin fa-fw"></span></a></div>
-              <div class="title pull-right">LinkedIn</div>
-              <div class="description pull-right">https://www.linkedin.com/in/adamlwalker77</div>
-            </div>
-            <div class="contact-item">
-              <div class="icon pull-left text-center"><a href="https://github.com/adamlwalker"><span class="fa fa-github fa-fw"></span></a></div>
-              <div class="title pull-right">Github</div>
-              <div class="description pull-right">https://github.com/adamlwalker</div>
-            </div>
-          </div>
+<%= render 'contact' %>
     
           <!-- SKILLS -->
-          <div class="box">
-            <h2>Skills</h2>
-	    <div class="skills">
-		    <% getlist(Skill).each {|sk| %>
-			    <div class="item-skills hidden-print" data-percent="<%= sk.level %>"><%= sk.name %></div>
-		    <% } %>
-<div class="visible-print"><% getlist(Skill).each{|srv| %><%= srv.name %> | <% } %> </div>
-              <div class="skills-legend clearfix hidden-print">
-                <div class="legend-left legend">Beginner</div>
-                <div class="legend-left legend"><span>Proficient</span></div>
-                <div class="legend-right legend"><span>Expert</span></div>
-                <div class="legend-right legend">Master</div>
-              </div>
-            </div>
-          </div>
+<%= render 'skill' %>
           
                  <!-- Software -->
-          <div class="box">
-            <h2>Software</h2>
-	    <div class="skills">
-		    <% getlist(Software).each{|sw| %>
-			    <div class="item-skills hidden-print" data-percent="<%= sw.level %>"><%= sw.name %></div>
-		    <% } %>
-<div class="visible-print"><% getlist(Software).each{|srv| %><%= srv.name %> | <% } %> </div>
-              <div class="skills-legend clearfix hidden-print">
-                <div class="legend-left legend">Beginner</div>
-                <div class="legend-left legend"><span>Proficient</span></div>
-                <div class="legend-right legend"><span>Expert</span></div>
-                <div class="legend-right legend">Master</div>
-              </div>
-            </div>
-          </div>
+<%= render 'software' %>
           
                  <!-- 3rd party services -->
-          <div class="box">
-            <h2>3rd Party Services</h2>
-	    <div class="skills">
-		    <% getlist(Service).each{|srv| %>
-	    <div class="item-skills hidden-print" data-percent="<%= srv.level %>"><%= srv.name %></div>
-		    <% } %>
-     <div class="visible-print"><% getlist(Service).each{|srv| %><%= srv.name %> | <% } %> </div>
-              <div class="skills-legend clearfix hidden-print">
-                <div class="legend-left legend">Beginner</div>
-                <div class="legend-left legend"><span>Proficient</span></div>
-                <div class="legend-right legend"><span>Expert</span></div>
-                <div class="legend-right legend">Master</div>
-              </div>
-            </div>
-          </div>
+<%= render 'service' %>
           
 
           <!-- HOBBIES -->
-          <div class="box hidden-print">
-		  <h2>Hobbies</h2>
-		  <% getlist(Hobby).each {|hob| %> 
-			  <div class="hobby"><%= hob.name %></div>
-		  <% } %>
-          </div>
-        </div>
-      </div>
+<%= render 'hobby' %>
+      
      <div class="alert alert-danger hidden-print">
       <p>This site is built using Bootstrap, jQuery and Ruby on Rails by <a href="http://adamlwalker.com">Adam Walker</a>, 2015. </p>
       </div>
