@@ -17,7 +17,6 @@ gem 'devise'
 #gem 'unicorn'
 
 gem 'activeadmin', github: 'activeadmin'
-gem 'web-console'
 
 gem 'activeadmin-dragonfly', github: 'stefanoverna/activeadmin-dragonfly'
 gem 'activeadmin-wysihtml5', github: 'stefanoverna/activeadmin-wysihtml5'
