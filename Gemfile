@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby "2.1.3"
 
+gem 'newrelic_rpm'
 gem 'rails', '4.2.1'
 gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
